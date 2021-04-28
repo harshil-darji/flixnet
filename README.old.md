@@ -1,3 +1,2 @@
-# Flixnet
-
+# flixnet
 Flixnet is not Netflix
