@@ -1,5 +1,13 @@
-export default function App() {
+import React from 'react';
+import './App.css';
+import Home from './components/Home';
+
+function App() {
   return (
-    <p>Hello app</p>
+    <div className="App">
+      <Home />
+    </div>
   );
 }
+
+export default App;
