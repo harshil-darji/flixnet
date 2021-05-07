@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from "react-router-dom"; import './App.css';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
 import { login, logout, selectUser } from './features/userSlice';
@@ -39,6 +40,8 @@ function App() {
             </Route>
           </Switch>)
         }
+        <div className="app__footer__separator"></div>
+        <Footer />
       </Router>
     </div>
   );
