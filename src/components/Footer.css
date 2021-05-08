@@ -7,7 +7,7 @@
 }
 
 .app__footer__logo {
-    width: 50px;
+    width: 3rem;
     margin-left: 5px;
     margin-right: 5px;
     cursor: pointer;
@@ -16,9 +16,4 @@
 .app__made__by {
     margin-top: 25px;
     margin-bottom: 30px;
-}
-
-.app__footer__separator {
-    margin-top: 30px;
-    border-top: 0.1px solid rgba(138, 138, 138, 0.4);
 }
