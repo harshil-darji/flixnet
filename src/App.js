@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from "react-router-dom"; import './App.css';
 import Footer from './components/Footer';
 import Home from './components/Home';
@@ -52,6 +53,7 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
+            <Redirect to="/" />
           </Switch>)
         }
         <div className="app__footer__separator"></div>
