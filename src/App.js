@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"; import './App.css';
 import Footer from './components/Footer';
 import Home from './components/Home';
-import Login from './components/Login';
+import Landing from './components/Landing';
 import Profile from './components/Profile';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
@@ -44,7 +44,7 @@ function App() {
           height={100}
           width={100}
           timeout={3000} //3 secs
-        /> : !user ? (<Login />) :
+        /> : !user ? (<Landing />) :
           (<Switch>
             <Route path="/profile">
               <Profile />

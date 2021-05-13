@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "./Landing.css";
 import flixnetLogo from "../assets/images/flixnet.png";
 import SignUp from "./SignUp";
 
