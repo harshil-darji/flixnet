@@ -13,6 +13,7 @@ import Profile from './components/Profile';
 import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import Loader from "react-loader-spinner";
+import Login from './components/Login';
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -45,7 +46,15 @@ function App() {
           height={100}
           width={100}
           timeout={3000} //3 secs
-        /> : !user ? (<Landing />) :
+        /> : !user ?
+          (
+            <Switch>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route component={Landing} />
+            </Switch>
+          ) :
           (<Switch>
             <Route path="/profile">
               <Profile />
