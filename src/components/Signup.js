@@ -1,22 +1,26 @@
-import React, { useState } from 'react';
-import "./Login.css";
-import "./Landing.css";
+import React, { useState } from 'react'
+import "./Signup.css";
 import { auth } from '../firebase';
 import { useHistory, useLocation } from 'react-router';
 import Background from './Background';
 import toast from 'react-hot-toast';
 
-function Login() {
+function Signup() {
     
     const history = useHistory();
     const query = new URLSearchParams(useLocation().search);
     const [email, setEmail] = useState(query.get("email"));
     const [passwd, setPasswd] = useState('');
+    const [confPasswd, setConfPasswd] = useState('');
 
-    const signIn = (e) => {
+    const register = (e) => {
         e.preventDefault();
-        auth.signInWithEmailAndPassword(email, passwd)
-            .then((authUser) => { toast.success("Welcome!") })
+        if(passwd !== confPasswd){
+            toast.error("Passwords don't match!")
+            return;
+        }
+        auth.createUserWithEmailAndPassword(email, passwd)
+            .then((authUser) => { toast.success("Account created successfully!") })
             .catch((error) => {
                 toast.error(error.message);
             })
@@ -26,16 +30,17 @@ function Login() {
         <Background showButton={false}>
             <div className="login__card">
                 <form>
-                    <h1>Sign In</h1>
+                    <h1>Register</h1>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" />
                     <input value={passwd} onChange={(e) => setPasswd(e.target.value)} placeholder="Password" type="password" />
-                    <button type="submit" onClick={signIn}>Sign In</button>
-                    <h4> <span className="gray">New to Flixnet? </span>
-                        <span className="link" onClick={() => history.push("/signup")}>Sign up now</span></h4>
+                    <input value={confPasswd} onChange={(e) => setConfPasswd(e.target.value)} placeholder="Confirm Password" type="password" />
+                    <button type="submit" onClick={register}>Register</button>
+                    <h4> <span className="gray">Already have an account? </span>
+                        <span className="link" onClick={() => history.push(`/login?email=${email}`)}>Sign in</span></h4>
                 </form>
             </div>
         </Background>
     )
 }
 
-export default Login;
+export default Signup;

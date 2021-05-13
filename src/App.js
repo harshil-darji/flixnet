@@ -14,6 +14,8 @@ import { login, logout, selectUser } from './features/userSlice';
 import { auth } from './firebase';
 import Loader from "react-loader-spinner";
 import Login from './components/Login';
+import Signup from './components/Signup';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -39,7 +41,9 @@ function App() {
 
   return (
     <div className="App">
+      <Toaster />
       <Router>
+        {/* TODO: Improve loader logic */}
         {showLoader ? <Loader
           type="TailSpin"
           color="#a0a0a0"
@@ -51,6 +55,9 @@ function App() {
             <Switch>
               <Route path="/login">
                 <Login />
+              </Route>
+              <Route path="/signup">
+                <Signup />
               </Route>
               <Route component={Landing} />
             </Switch>
