@@ -8,7 +8,7 @@ function Landing() {
   const emailRef = useRef('');
   return (
     <React.Fragment>
-      <Background showButton={true}>
+      <Background showSignInButton={true} showFlixnetLogo={true}>
         <div className="landing__content">
           <h1>Unlimited movies, TV shows and more.</h1>
           <h2>Watch anywhere. Cancel anytime.</h2>

@@ -16,6 +16,7 @@ import Loader from "react-loader-spinner";
 import Login from './components/Login';
 import Signup from './components/Signup';
 import { Toaster } from 'react-hot-toast';
+import Background from './components/Background';
 
 function App() {
   const [showLoader, setShowLoader] = useState(true);
@@ -44,33 +45,39 @@ function App() {
       <Toaster />
       <Router>
         {/* TODO: Improve loader logic */}
-        {showLoader ? <Loader
-          type="TailSpin"
-          color="#a0a0a0"
-          height={100}
-          width={100}
-          timeout={3000} //3 secs
-        /> : !user ?
-          (
-            <Switch>
-              <Route path="/login">
-                <Login />
+        {showLoader ?
+          <React.Fragment>
+            <Background>
+              <Loader
+                type="TailSpin"
+                color="#a0a0a0"
+                height={100}
+                width={100}
+                timeout={3000} //3 secs
+              />
+            </Background>
+          </React.Fragment>
+          : !user ?
+            (
+              <Switch>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/signup">
+                  <Signup />
+                </Route>
+                <Route component={Landing} />
+              </Switch>
+            ) :
+            (<Switch>
+              <Route path="/profile">
+                <Profile />
               </Route>
-              <Route path="/signup">
-                <Signup />
+              <Route exact path="/">
+                <Home />
               </Route>
-              <Route component={Landing} />
-            </Switch>
-          ) :
-          (<Switch>
-            <Route path="/profile">
-              <Profile />
-            </Route>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Redirect to="/" />
-          </Switch>)
+              <Redirect to="/" />
+            </Switch>)
         }
         <div className="app__footer__separator"></div>
         <Footer />

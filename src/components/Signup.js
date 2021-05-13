@@ -27,7 +27,7 @@ function Signup() {
     }
 
     return (
-        <Background showButton={false}>
+        <Background showSignInButton={false} showFlixnetLogo={true}>
             <div className="login__card">
                 <form>
                     <h1>Register</h1>
@@ -36,7 +36,7 @@ function Signup() {
                     <input value={confPasswd} onChange={(e) => setConfPasswd(e.target.value)} placeholder="Confirm Password" type="password" />
                     <button type="submit" onClick={register}>Register</button>
                     <h4> <span className="gray">Already have an account? </span>
-                        <span className="link" onClick={() => history.push(`/login?email=${email}`)}>Sign in</span></h4>
+                        <span className="link" onClick={() => history.push(email?`/login?email=${email}`:`/login`)}>Sign in</span></h4>
                 </form>
             </div>
         </Background>

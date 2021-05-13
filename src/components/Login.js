@@ -23,7 +23,7 @@ function Login() {
     }
 
     return (
-        <Background showButton={false}>
+        <Background showSignInButton={false} showFlixnetLogo={true}>
             <div className="login__card">
                 <form>
                     <h1>Sign In</h1>

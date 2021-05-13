@@ -7,8 +7,9 @@ function Background(props) {
     const history = useHistory();
     return (
         <div className="landing">
-            <img className="landing__logo" src={flixnetLogo} onClick={() => history.push("/")} alt="Flixnet" />
-            {props.showButton ? <button className="signin__button" onClick={() => history.push("/login")}>
+            {props.showFlixnetLogo ? <img className="landing__logo" src={flixnetLogo} onClick={() => history.push("/")} alt="Flixnet" />
+                : null}
+            {props.showSignInButton ? <button className="signin__button" onClick={() => history.push("/login")}>
                 Sign in
             </button>
                 : null}
