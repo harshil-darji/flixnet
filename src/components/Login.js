@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
-import "./SignUp.css";
+import "./Login.css";
 import { auth } from '../firebase';
 
-function SignUp() {
+function Login() {
 
     const emailRef = useRef(null);
     const passwdRef = useRef(null);
@@ -26,17 +26,17 @@ function SignUp() {
     }
 
     return (
-        <div className="signUp">
+        <div className="login">
             <form>
                 <h1>Sign In</h1>
                 <input ref={emailRef} placeholder="Email" type="email" />
                 <input ref={passwdRef} placeholder="Password" type="password" />
                 <button type="submit" onClick={signIn}>Sign In</button>
-                <h4> <span className="signUp__gray">New to Flixnet? </span>
-                    <span className="signUp__link" onClick={register}>Sign up now</span></h4>
+                <h4> <span className="login__gray">New to Flixnet? </span>
+                    <span className="login__link" onClick={register}>Sign up now</span></h4>
             </form>
         </div>
     )
 }
 
-export default SignUp;
+export default Login;

@@ -1,4 +1,4 @@
-.signUp {
+.login {
     max-width: 300px;
     padding: 70px;
     margin-left: auto;
@@ -8,35 +8,35 @@
     width: 600px;
 }
 
-.signUp > form > h1 {
+.login > form > h1 {
     text-align: left;
     margin-bottom: 25px;
     font-weight: 500;
 }
 
-.signUp > form > h4 {
+.login > form > h4 {
     text-align: left;
     margin-top: 30px;
 }
 
-.signUp__gray {
+.login__gray {
     color: gray;
 }
 
-.signUp__link {
+.login__link {
     cursor: pointer;
 }
 
-.signUp__link:hover {
+.login__link:hover {
     text-decoration: underline;
 }
 
-.signUp > form {
+.login > form {
     display: grid;
     flex-direction: column;
 }
 
-.signUp > form > input {
+.login > form > input {
     padding: 10px;
     outline-width: 0;
     height: 40px;
@@ -48,7 +48,7 @@
     color: white;
 }
 
-.signUp > form > button {
+.login > form > button {
     padding: 16px 20px;
     font-size: 1rem;
     color: #fff;

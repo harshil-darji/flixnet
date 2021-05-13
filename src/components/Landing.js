@@ -1,40 +1,40 @@
 import React, { useState } from "react";
 import "./Landing.css";
 import flixnetLogo from "../assets/images/flixnet.png";
-import SignUp from "./SignUp";
+import Login from "./Login";
 
-function Login() {
+function Landing() {
   const [signIn, setSignIn] = useState(false);
 
   return (
     <React.Fragment>
       {signIn ? (
-        <SignUp />
+        <Login />
       ) : (
         <>
-          <div className="login">
-            <div className="login__background">
-              <img className="login__logo" src={flixnetLogo} alt="Flixnet" />
+          <div className="landing">
+            <div className="landing__background">
+              <img className="landing__logo" src={flixnetLogo} alt="Flixnet" />
               <button
                 className="signin__button"
                 onClick={() => setSignIn(true)}
               >
                 Sign in
               </button>
-              <div className="login__card">
-                <div className="login__gradient">
-                  <div className="login__content">
+              <div className="landing__card">
+                <div className="landing__gradient">
+                  <div className="landing__content">
                     <h1>Unlimited movies, TV shows and more.</h1>
                     <h2>Watch anywhere. Cancel anytime.</h2>
                     <h3>
                       Ready to watch? Enter your email to create or restart your
                       membership.
                     </h3>
-                    <div className="login__input">
+                    <div className="landing__input">
                       <form>
                         <input type="email" placeholder="Email Address" />
                         <button
-                          className="login__getStarted"
+                          className="landing__getStarted"
                           onClick={() => setSignIn(true)}
                         >
                           GET STARTED
@@ -52,4 +52,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Landing;
