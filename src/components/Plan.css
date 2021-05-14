@@ -1,0 +1,53 @@
+.profile__subscription {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 25px;
+    margin-top: 15px;
+}
+
+.profile__subscribe__button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    cursor: pointer;
+    border: none;
+}
+
+.profile__currentPlan__buton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: gray;
+    cursor: pointer;
+    border: none;
+}
+
+@media (max-width: 425px) {
+    .profile__subscription {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 15px;
+        padding: 15px 0px;
+    }
+    
+    .profile__subscribe__button {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #e50914;
+        cursor: pointer;
+        border: none;
+    }
+
+    .profile__currentPlan__buton {
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: gray;
+        cursor: pointer;
+        border: none;
+    }
+}
