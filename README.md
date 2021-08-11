@@ -2,9 +2,9 @@
 
 Flixnet is not Netflix.
 
-![flixnet](https://user-images.githubusercontent.com/41537302/116948848-69034c00-ac35-11eb-9141-686749706a23.png)
+<img width="1435" alt="flixnet_ss" src="https://user-images.githubusercontent.com/41537302/128978484-ecfc651b-74d2-45de-8277-673a55f6affd.png">
 
-[Live Demo](https://flixnet-360fa.web.app/)
+## [Live Demo](https://flixnet-360fa.web.app/)
 
 ## How to make it work?
 
